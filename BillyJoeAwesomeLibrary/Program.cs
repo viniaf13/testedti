@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BillyJoeAwesomeLibrary.Models;
+using System;
 
 namespace BillyJoeAwesomeLibrary
 {
@@ -6,7 +7,6 @@ namespace BillyJoeAwesomeLibrary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+  
         }
     }
-}

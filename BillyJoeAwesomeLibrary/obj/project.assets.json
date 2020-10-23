@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vinib\\Desktop\\teste-dti\\BillyJoeAwesomeLibrary\\BillyJoeAwesomeLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\vinib\\Desktop\\teste-dti\\testedti\\BillyJoeAwesomeLibrary\\BillyJoeAwesomeLibrary.csproj",
       "projectName": "BillyJoeAwesomeLibrary",
-      "projectPath": "C:\\Users\\vinib\\Desktop\\teste-dti\\BillyJoeAwesomeLibrary\\BillyJoeAwesomeLibrary.csproj",
+      "projectPath": "C:\\Users\\vinib\\Desktop\\teste-dti\\testedti\\BillyJoeAwesomeLibrary\\BillyJoeAwesomeLibrary.csproj",
       "packagesPath": "C:\\Users\\vinib\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vinib\\Desktop\\teste-dti\\BillyJoeAwesomeLibrary\\obj\\",
+      "outputPath": "C:\\Users\\vinib\\Desktop\\teste-dti\\testedti\\BillyJoeAwesomeLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vinib\\AppData\\Roaming\\NuGet\\NuGet.Config",
