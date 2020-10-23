@@ -1,0 +1,13 @@
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\bin\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.exe
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\bin\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.deps.json
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\bin\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.runtimeconfig.json
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\bin\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.runtimeconfig.dev.json
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\bin\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.dll
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\bin\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.pdb
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.csprojAssemblyReference.cache
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.AssemblyInfoInputs.cache
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.AssemblyInfo.cs
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.csproj.CoreCompileInputs.cache
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.dll
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.pdb
+C:\Users\vinib\Desktop\teste-dti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.genruntimeconfig.cache
