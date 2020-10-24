@@ -26,6 +26,7 @@ namespace BillyJoeAwesomeLibrary.View
             novoAlbum.AnoLancamento = _albumController.ValidacaoAnoAlbum(anoString);
 
             //enviar para base de dados
+            _albumController.CadastrarAlbum(novoAlbum);
             //mensagem sucesso
             //retornar ao menu
         }

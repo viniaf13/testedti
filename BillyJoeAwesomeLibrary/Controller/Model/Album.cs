@@ -2,7 +2,7 @@
 
 namespace BillyJoeAwesomeLibrary.Models
 {
-    class Album
+    public class Album
     {
         public string Titulo { get; set; }
         public string Banda { get; set; }

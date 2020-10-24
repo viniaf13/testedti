@@ -1,4 +1,5 @@
 ﻿using BillyJoeAwesomeLibrary.Controller.Interface;
+using BillyJoeAwesomeLibrary.Models;
 using BillyJoeAwesomeLibrary.Service.Interface;
 using System;
 
@@ -22,6 +23,11 @@ namespace BillyJoeAwesomeLibrary.Controller
                 isAnoValido = Utils.IsStringInteiroPositivo(anoString);
             }
             return Int32.Parse(anoString);
+        }
+
+        public void CadastrarAlbum(Album album)
+        {
+            _albumService.CadastrarAlbum(album);
         }
     }
 }

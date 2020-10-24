@@ -20,7 +20,6 @@ namespace BillyJoeAwesomeLibrary.View
                 switch (inputUsuario)
                 {
                     case "1":
-
                         TelaCadastroAlbum telaCadastroAlbum = new TelaCadastroAlbum(_albumController);
                         telaCadastroAlbum.CadastrarAlbum();
                         loop = false;
@@ -61,6 +60,5 @@ namespace BillyJoeAwesomeLibrary.View
             Console.Write("\r\nSelecione uma operacao e aperte ENTER: ");
             return Console.ReadLine();
         }
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using BillyJoeAwesomeLibrary.Repository.Interface;
+﻿using BillyJoeAwesomeLibrary.Models;
+using BillyJoeAwesomeLibrary.Repository.Interface;
 using BillyJoeAwesomeLibrary.Service.Interface;
 
 namespace BillyJoeAwesomeLibrary.Service
@@ -9,6 +10,10 @@ namespace BillyJoeAwesomeLibrary.Service
         public AlbumService(IAlbumRepository albumRepository)
         {
             _albumRepository = albumRepository;
+        }
+        public void CadastrarAlbum(Album album)
+        {
+            _albumRepository.CadastrarAlbum(album);
         }
     }
 }
