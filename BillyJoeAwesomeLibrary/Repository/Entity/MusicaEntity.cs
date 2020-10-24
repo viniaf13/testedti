@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Text;
 
-namespace BillyJoeAwesomeLibrary.Models
+namespace BillyJoeAwesomeLibrary.Repository.Entity
 {
-    public class Musica
+    public class MusicaEntity
     {
         public string Titulo { get; set; }
         public int DuracaoEmSeg { get; set; }

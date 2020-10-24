@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xanVrREXRz4VUtfwnh6p4KH2cNXBmqFa/yU+tLgDkkKYrtn81nI6h+ZckW3KXDqRxxcSQtmxdxQbut89fDQ30w==",
+  "dgSpecHash": "6skPD8meyeEpmpPpMw9c2uoRnGyIkZUA4EiPHMNsXsrwxBa7NUmbllccio/Symx1s6PwGwcevvatMOm+tYCn9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\vinib\\Desktop\\teste-dti\\testedti\\BillyJoeAwesomeLibrary\\BillyJoeAwesomeLibrary.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\vinib\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.9\\microsoft.extensions.dependencyinjection.3.1.9.nupkg.sha512",
+    "C:\\Users\\vinib\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.9\\microsoft.extensions.dependencyinjection.abstractions.3.1.9.nupkg.sha512"
+  ],
   "logs": []
 }

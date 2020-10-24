@@ -20,7 +20,10 @@ C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\bin\Debug\netco
 C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.csprojAssemblyReference.cache
 C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.AssemblyInfoInputs.cache
 C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.AssemblyInfo.cs
-C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.csproj.CoreCompileInputs.cache
 C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.dll
 C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.pdb
 C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.genruntimeconfig.cache
+C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.csproj.CoreCompileInputs.cache
+C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\vinib\Desktop\teste-dti\testedti\BillyJoeAwesomeLibrary\obj\Debug\netcoreapp3.1\BillyJoeAwesomeLibrary.csproj.CopyComplete
