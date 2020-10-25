@@ -25,7 +25,15 @@ namespace BillyJoeAwesomeLibrary.Repository
         {
             string path = Directory.GetCurrentDirectory();
             List<Album> baseDeDados = ReadFromJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt");
-            return null;
+            List<Album> albunsFiltrados = new List<Album>();
+            foreach (Album album in baseDeDados)
+            {
+                if (album.Titulo == termoPesquisa)
+                {
+                    albunsFiltrados.Add(album);
+                }
+            }
+            return albunsFiltrados;
         }
 
         private static void WriteToJsonFile<T>(string filePath, T objectToWrite, bool append = false) where T : new()

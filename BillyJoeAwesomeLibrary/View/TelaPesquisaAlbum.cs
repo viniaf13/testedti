@@ -2,6 +2,7 @@
 using BillyJoeAwesomeLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BillyJoeAwesomeLibrary.View
 {
@@ -46,8 +47,33 @@ namespace BillyJoeAwesomeLibrary.View
         }
         private void PesquisarAlbumPorTitulo()
         {
-            List<Album> albuns = new List<Album>();
-            albuns = _albumController.PesquisarAlbumPorTitulo("teste");
+            Console.Write("\nDigite o titulo do album: ");
+            string inputUsuario = Console.ReadLine();
+            List<Album> albuns = _albumController.PesquisarAlbumPorTitulo(inputUsuario);
+            if (albuns == null || !albuns.Any())
+            {
+                Console.WriteLine("\nNao foram encontrados resultados para sua busca! =( ");
+            }
+            else
+            {
+                Console.WriteLine("\nForam encontrados os seguintes resultados: \n ");
+                foreach (Album album in albuns)
+                {
+                    Console.WriteLine(
+                    "TITULO: " + album.Titulo + "\n" +
+                    "BANDA: " + album.Banda + "\n" +
+                    "ANO DE LANCAMENTO: " + album.AnoLancamento + "\n" +
+                    "MUSICAS: ");
+                    int musicCount = 1;
+                    foreach (Musica musica in album.Musicas)
+                    {
+                        string isFavorita = (musica.Favorita ? "♥" : "");
+                        Console.WriteLine(
+                        $"   {musicCount} - {musica.Titulo} ({musica.DuracaoEmSeg}s) {isFavorita} ");
+                        musicCount++;
+                    }    
+                }
+            }
         } 
         private string AbrirMenuDeOpcoes()
         {
