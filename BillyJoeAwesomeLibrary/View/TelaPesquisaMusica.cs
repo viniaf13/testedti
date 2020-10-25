@@ -9,11 +9,9 @@ namespace BillyJoeAwesomeLibrary.View
 {
     public class TelaPesquisaMusica
     {
-        private readonly IAlbumController _albumController;
         private readonly IMusicaController _musicaController;
-        public TelaPesquisaMusica(IAlbumController albumController, IMusicaController musicaController)
+        public TelaPesquisaMusica(IMusicaController musicaController)
         {
-            _albumController = albumController;
             _musicaController = musicaController;
         }
 
@@ -38,7 +36,6 @@ namespace BillyJoeAwesomeLibrary.View
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "3":
-                        Console.WriteLine("\nSaiu");
                         loop = false;
                         break;
                     default:
@@ -55,7 +52,7 @@ namespace BillyJoeAwesomeLibrary.View
             MostrarMusicasFiltradas(musicasFiltradas);
         }
 
-        private static void MostrarMusicasFiltradas(List<Musica> musicas)
+        private void MostrarMusicasFiltradas(List<Musica> musicas)
         {
             if (musicas == null || !musicas.Any())
             {

@@ -41,7 +41,6 @@ namespace BillyJoeAwesomeLibrary.View
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "4":
-                        Console.WriteLine("\nSaiu");
                         loop = false;
                         break;
                     default:

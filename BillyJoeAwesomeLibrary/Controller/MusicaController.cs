@@ -17,5 +17,10 @@ namespace BillyJoeAwesomeLibrary.Controller
             return _musicaService.PesquisarMusicaPorPropriedade(termoPesquisa, propriedade);
         }
 
+        public List<Musica> GerarPlaylist()
+        {
+            return _musicaService.GerarPlaylist();
+        }
+
     }
 }

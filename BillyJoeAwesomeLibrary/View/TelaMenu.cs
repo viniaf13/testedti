@@ -32,16 +32,16 @@ namespace BillyJoeAwesomeLibrary.View
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "3":
-                        TelaPesquisaMusica telaPesquisaMusica = new TelaPesquisaMusica(_albumController, _musicaController);
+                        TelaPesquisaMusica telaPesquisaMusica = new TelaPesquisaMusica(_musicaController);
                         telaPesquisaMusica.PesquisarMusica();
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "4":
-                        Console.WriteLine("\nGerou Playlist");
+                        TelaGeraPlaylist telaGeraPlaylist = new TelaGeraPlaylist(_musicaController);
+                        telaGeraPlaylist.GerarPlaylist();
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "5":
-                        Console.WriteLine("\nSaiu");
                         loop = false;
                         break;
                     default:

@@ -12,7 +12,7 @@ namespace BillyJoeAwesomeLibrary.Repository
         public List<Musica> PesquisarMusicaPorPropriedade(string termoPesquisa, string propriedade)
         {
             string path = Directory.GetCurrentDirectory();
-            List<Album> baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt");
+            List<Album> baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + Constants.FILE_NAME);
 
             List<Musica> musicasFiltradas = new List<Musica>();
             foreach (Album album in baseDeDados)
@@ -20,6 +20,19 @@ namespace BillyJoeAwesomeLibrary.Repository
                 musicasFiltradas.AddRange((album.Musicas.Where(musica => (string)Utils.GetPropertyValue(musica, propriedade) == termoPesquisa)));
             }
             return musicasFiltradas;
+        }
+
+        public List<Musica> BuscarTodasMusicas()
+        {
+            string path = Directory.GetCurrentDirectory();
+            List<Album> baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + Constants.FILE_NAME);
+            List<Musica> todasMusicas = new List<Musica>();
+            foreach (Album album in baseDeDados)
+            {
+                todasMusicas.AddRange(album.Musicas);
+            }
+
+            return todasMusicas;
         }
     }
 }

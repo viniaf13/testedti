@@ -12,18 +12,18 @@ namespace BillyJoeAwesomeLibrary.Repository
         {
             string path = Directory.GetCurrentDirectory();
             List<Album> baseDeDados = new List<Album>();
-            if (Utils.ReadFromJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt") != null)
+            if (Utils.ReadFromJsonFile<List<Album>>(path + Constants.FILE_NAME) != null)
             {
-                baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt");
+                baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + Constants.FILE_NAME);
             }
             baseDeDados.Add(album);
-            Utils.WriteToJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt", baseDeDados);
+            Utils.WriteToJsonFile<List<Album>>(path + Constants.FILE_NAME, baseDeDados);
         }
 
         public List<Album> PesquisarAlbumPorPropriedade(string termoPesquisa, string propriedadeAlbum)
         {
             string path = Directory.GetCurrentDirectory();
-            List<Album> baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt");
+            List<Album> baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + Constants.FILE_NAME);
             List<Album> albunsFiltrados = new List<Album>();
             foreach (Album album in baseDeDados)
             {

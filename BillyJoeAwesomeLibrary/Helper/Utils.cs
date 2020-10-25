@@ -8,24 +8,24 @@ namespace BillyJoeAwesomeLibrary.Helper
     {
         public static string ValidacaoAnoString(string anoString, string errorMsg)
         {
-            bool isAnoValido = (Utils.IsStringInteiroMaiorQueZero(anoString) && (anoString.Length == 4));
+            bool isAnoValido = (IsStringInteiroMaiorQueZero(anoString) && (anoString.Length == 4));
             while (!isAnoValido)
             {
                 Console.Write(errorMsg, anoString);
                 anoString = Console.ReadLine();
-                isAnoValido = (Utils.IsStringInteiroMaiorQueZero(anoString) && (anoString.Length == 4));
+                isAnoValido = (IsStringInteiroMaiorQueZero(anoString) && (anoString.Length == 4));
             }
             return anoString;
         }
 
         public static string ValidacaoInteiroMaiorQueZero(string numeroString, string errorMsg)
         {
-            bool isNumeroValido = (Utils.IsStringInteiroMaiorQueZero(numeroString));
+            bool isNumeroValido = (IsStringInteiroMaiorQueZero(numeroString));
             while (!isNumeroValido)
             {
                 Console.Write(errorMsg, numeroString);
                 numeroString = Console.ReadLine();
-                isNumeroValido = (Utils.IsStringInteiroMaiorQueZero(numeroString));
+                isNumeroValido = (IsStringInteiroMaiorQueZero(numeroString));
             }
             return numeroString;
         }
