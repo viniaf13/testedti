@@ -1,17 +1,19 @@
 ﻿using BillyJoeAwesomeLibrary.Controller.Interface;
+using BillyJoeAwesomeLibrary.Models;
 using System;
+using System.Collections.Generic;
 
 namespace BillyJoeAwesomeLibrary.View
 {
-    public class TelaMenu 
+    public class TelaPesquisaAlbum
     {
         private readonly IAlbumController _albumController;
-        public TelaMenu(IAlbumController albumController)
+        public TelaPesquisaAlbum(IAlbumController albumController)
         {
             _albumController = albumController;
         }
 
-        public void InicializarVisual()
+        public void PesquisarAlbum()
         {
             bool loop = true;
             string inputUsuario = AbrirMenuDeOpcoes();
@@ -20,46 +22,45 @@ namespace BillyJoeAwesomeLibrary.View
                 switch (inputUsuario)
                 {
                     case "1":
-                        TelaCadastroAlbum telaCadastroAlbum = new TelaCadastroAlbum(_albumController);
-                        telaCadastroAlbum.CadastrarAlbum();
+                        PesquisarAlbumPorTitulo();
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "2":
-                        TelaPesquisaAlbum telaPesquisaAlbum = new TelaPesquisaAlbum(_albumController);
-                        telaPesquisaAlbum.PesquisarAlbum();
+                        Console.WriteLine("\nPesquisou Musica2");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "3":
-                        Console.WriteLine("\nPesquisou Musica");
+                        Console.WriteLine("\nPesquisou Musica3");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "4":
-                        Console.WriteLine("\nGerou Playlist");
-                        inputUsuario = AbrirMenuDeOpcoes();
-                        break;
-                    case "5":
                         Console.WriteLine("\nSaiu");
                         loop = false;
                         break;
                     default:
-                        Console.WriteLine("\nOpcao Invalida! Selecione uma das opções da lista abaixo: ");
+                        Console.WriteLine("\nOpcao Invalida! Selecione uma das opcoes da lista abaixo: ");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                 }
             }
-        }  
+        }
+        private void PesquisarAlbumPorTitulo()
+        {
+            List<Album> albuns = new List<Album>();
+            albuns = _albumController.PesquisarAlbumPorTitulo("teste");
+        } 
         private string AbrirMenuDeOpcoes()
         {
             Console.WriteLine(
-                "\nMENU DE OPERACOES\n" +
-                "1 - Cadastrar Album\n" +
-                "2 - Pesquisar Album\n" +
-                "3 - Pesquisar Musica\n" +
-                "4 - Gerar Playlist\n" +
-                "5 - Sair"
+                "\nSelecione o filtro da pesquisa:\n" +
+                "1 - Pesquisar por titulo\n" +
+                "2 - Pesquisar por ano de lancamento\n" +
+                "3 - Pesquisar pelo nome da banda\n" +
+                "4 - Voltar ao Menu Principal"
                 );
-            Console.Write("\r\nSelecione uma operacao e aperte ENTER: ");
+            Console.Write("\r\nSelecione uma opcao e aperte ENTER: ");
             return Console.ReadLine();
         }
+
     }
 }

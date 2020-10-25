@@ -29,10 +29,10 @@ namespace BillyJoeAwesomeLibrary.View
 
             novoAlbum.Musicas = AdicionarMusicas();
 
-            //enviar para base de dados
             _albumController.CadastrarAlbum(novoAlbum);
 
             //mensagem sucesso
+            Console.WriteLine("\nAlbum cadastrado com sucesso!");
             //retornar ao menu
         }
 

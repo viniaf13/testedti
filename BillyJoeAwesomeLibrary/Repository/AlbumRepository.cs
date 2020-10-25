@@ -2,6 +2,7 @@
 using BillyJoeAwesomeLibrary.Repository.Interface;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace BillyJoeAwesomeLibrary.Repository
@@ -11,10 +12,23 @@ namespace BillyJoeAwesomeLibrary.Repository
         public void CadastrarAlbum(Album album)
         {
             string path = Directory.GetCurrentDirectory();
-            WriteToJsonFile<Album>(path + "\\BibliotecaDoBillie.txt", album);
+            List<Album> baseDeDados = new List<Album>();
+            if (ReadFromJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt") != null)
+            {
+                baseDeDados = ReadFromJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt");
+            }
+            baseDeDados.Add(album);
+            WriteToJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt", baseDeDados);
         }
 
-        private static void WriteToJsonFile<T>(string filePath, T objectToWrite, bool append = true) where T : new()
+        public List<Album> PesquisarAlbumPorTitulo(string termoPesquisa)
+        {
+            string path = Directory.GetCurrentDirectory();
+            List<Album> baseDeDados = ReadFromJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt");
+            return null;
+        }
+
+        private static void WriteToJsonFile<T>(string filePath, T objectToWrite, bool append = false) where T : new()
         {
             TextWriter writer = null;
             try
@@ -67,4 +81,5 @@ namespace BillyJoeAwesomeLibrary.Repository
 /// <typeparam name="T">The type of object to read from the file.</typeparam>
 /// <param name="filePath">The file path to read the object instance from.</param>
 /// <returns>Returns a new instance of the object read from the Json file.</returns>
+
 

@@ -1,8 +1,8 @@
 ﻿using BillyJoeAwesomeLibrary.Controller.Interface;
 using BillyJoeAwesomeLibrary.Models;
-using BillyJoeAwesomeLibrary.Helper;
 using BillyJoeAwesomeLibrary.Service.Interface;
 using System;
+using System.Collections.Generic;
 
 namespace BillyJoeAwesomeLibrary.Controller
 {
@@ -17,6 +17,13 @@ namespace BillyJoeAwesomeLibrary.Controller
         public void CadastrarAlbum(Album album)
         {
             _albumService.CadastrarAlbum(album);
+        }
+
+        public List<Album> PesquisarAlbumPorTitulo(string termoPesquisa)
+        {
+            List<Album> albuns = new List<Album>();
+            albuns = _albumService.PesquisarAlbumPorTitulo(termoPesquisa);
+            return albuns;
         }
     }
 }
