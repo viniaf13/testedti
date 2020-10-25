@@ -6,9 +6,11 @@ namespace BillyJoeAwesomeLibrary.View
     public class TelaMenu 
     {
         private readonly IAlbumController _albumController;
-        public TelaMenu(IAlbumController albumController)
+        private readonly IMusicaController _musicaController;
+        public TelaMenu(IAlbumController albumController, IMusicaController musicaController)
         {
             _albumController = albumController;
+            _musicaController = musicaController;
         }
 
         public void InicializarVisual()
@@ -30,6 +32,7 @@ namespace BillyJoeAwesomeLibrary.View
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "3":
+                        TelaPesquisaMusica telaPesquisaMusica = new TelaPesquisaMusica(_albumController, _musicaController);
                         Console.WriteLine("\nPesquisou Musica");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;

@@ -17,8 +17,9 @@ namespace BillyJoeAwesomeLibrary
             ConfigureServices(serviceCollection);
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
-            var eventService = serviceProvider.GetService<IAlbumController>();
-            TelaMenu telaMenu = new TelaMenu(eventService);
+            var albumService = serviceProvider.GetService<IAlbumController>();
+            var musicaService = serviceProvider.GetService<IMusicaController>();
+            TelaMenu telaMenu = new TelaMenu(albumService, musicaService);
             telaMenu.InicializarVisual();
         }
 
@@ -27,7 +28,11 @@ namespace BillyJoeAwesomeLibrary
             services.AddScoped<IAlbumController, AlbumController>()
             .AddScoped<IAlbumService, AlbumService>()
             .AddScoped<IAlbumRepository, AlbumRepository>();
-                //.AddDbContext<DatabaseContext>(opt => opt.UseInMemoryDatabase("test"));
+
+            services.AddScoped<IMusicaController, MusicaController>()
+           .AddScoped<IMusicaService, MusicaService>()
+           .AddScoped<IMusicaRepository, MusicaRepository>();
+
         }
     }
 }
