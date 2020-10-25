@@ -1,5 +1,5 @@
-﻿using BillyJoeAwesomeLibrary.Controller;
-using BillyJoeAwesomeLibrary.Controller.Interface;
+﻿using BillyJoeAwesomeLibrary.Controller.Interface;
+using BillyJoeAwesomeLibrary.Helper;
 using BillyJoeAwesomeLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,8 @@ namespace BillyJoeAwesomeLibrary.View
 
             Console.Write("\nDigite o ano de lancamento do album: ");
             string anoString = Console.ReadLine();
-            novoAlbum.AnoLancamento = _albumController.ValidacaoAnoAlbum(anoString);
+            string errorMsg = "\nAno invalido.\nDigite um ano de lancamento valido para o album: ";
+            novoAlbum.AnoLancamento = Utils.ValidacaoAnoString(anoString, errorMsg);
 
             novoAlbum.Musicas = AdicionarMusicas();
 
@@ -40,8 +41,9 @@ namespace BillyJoeAwesomeLibrary.View
             List<Musica> musicas = new List<Musica>();
 
             Console.Write("\nAdicione musicas ao album. Quantas musicas o album possui? ");
-            //validacao se eh numero maior que 0
-            int musicCount = Int32.Parse(Console.ReadLine());
+            string numMusicaString = Console.ReadLine();
+            string errorMsg = "\nNumero invalido.\nDigite um numero valido para o numero de musicas: ";
+            int musicCount = Utils.ValidacaoInteiroMaiorQueZero(numMusicaString, errorMsg);
 
             for (int i = 0; i < musicCount; i++)
             {
@@ -49,9 +51,12 @@ namespace BillyJoeAwesomeLibrary.View
                 Console.WriteLine("\nMUSICA " + (i + 1));
                 Console.Write("\nTitulo da musica: ");
                 musicaAtual.Titulo = Console.ReadLine();
+
                 Console.Write("\nDuracao da musica (em segundos): ");
-                //validar numero maior que 0
-                musicaAtual.DuracaoEmSeg = Int32.Parse(Console.ReadLine());
+                string duracaoMusicaString = Console.ReadLine();
+                errorMsg = "\nNumero invalido.\nDigite um numero valido para a duracao da musica: ";
+                musicaAtual.DuracaoEmSeg = Utils.ValidacaoInteiroMaiorQueZero(duracaoMusicaString, errorMsg);
+
                 musicaAtual.Favorita = IsMusicaFavorita();
                 musicas.Add(musicaAtual);
             }
