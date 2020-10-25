@@ -78,7 +78,7 @@ namespace BillyJoeAwesomeLibrary.View
                     {
                         string isFavorita = (musica.Favorita ? "♥" : "");
                         Console.WriteLine(
-                        $"   {musicCount} - {musica.Titulo} ({musica.DuracaoEmSeg}s) {isFavorita} ");
+                        $"   {musicCount}. {musica.Titulo} ({musica.DuracaoEmSeg}s) {isFavorita} ");
                         musicCount++;
                     }
                     Console.WriteLine("");

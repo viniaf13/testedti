@@ -13,9 +13,9 @@ namespace BillyJoeAwesomeLibrary.Service
             _musicaRepository = musicaRepository;
         }
 
-        public List<Musica> PesquisarMusicaPorTitulo(string termoPesquisa)
+        public List<Musica> PesquisarMusicaPorPropriedade(string termoPesquisa, string propriedade)
         {
-            return _musicaRepository.PesquisarMusicaPorTitulo(termoPesquisa);
+            return _musicaRepository.PesquisarMusicaPorPropriedade(termoPesquisa, propriedade);
         }
 
     }

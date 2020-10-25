@@ -28,13 +28,13 @@ namespace BillyJoeAwesomeLibrary.View
                     case "1":
                         Console.Write("\nDigite o titulo do musica: ");
                         inputUsuario = Console.ReadLine();
-                        PesquisarMusicaPorTitulo(inputUsuario);
+                        PesquisarMusicaPorPropriedade(inputUsuario, "Titulo");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "2":
                         Console.Write("\nDigite a banda desejada: ");
                         inputUsuario = Console.ReadLine();
-                       // PesquisarMusicaPorTitulo(inputUsuario, "Banda");
+                        PesquisarMusicaPorPropriedade(inputUsuario, "Banda");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "3":
@@ -49,9 +49,9 @@ namespace BillyJoeAwesomeLibrary.View
             }
         }
 
-        private void PesquisarMusicaPorTitulo(string inputUsuario)
+        private void PesquisarMusicaPorPropriedade(string inputUsuario, string propriedade)
         {
-            List<Musica> musicasFiltradas = _musicaController.PesquisarMusicaPorTitulo(inputUsuario);
+            List<Musica> musicasFiltradas = _musicaController.PesquisarMusicaPorPropriedade(inputUsuario, propriedade);
             MostrarMusicasFiltradas(musicasFiltradas);
         }
 
@@ -64,11 +64,13 @@ namespace BillyJoeAwesomeLibrary.View
             else
             {
                 Console.WriteLine("\nForam encontrados os seguintes resultados: \n ");
+                int musicCount = 1;
                 foreach (Musica musica in musicas)
                 {
                     string isFavorita = (musica.Favorita ? "♥" : "");
                     Console.WriteLine(
-                    $"{musica.Titulo} - {musica.Banda} ({musica.DuracaoEmSeg}s) {isFavorita} ");
+                    $"{musicCount}. {musica.Titulo} - {musica.Banda} ({musica.DuracaoEmSeg}s) {isFavorita} ");
+                    musicCount++;
                 }
                 Console.WriteLine("");
             }

@@ -12,9 +12,9 @@ namespace BillyJoeAwesomeLibrary.Controller
         {
             _musicaService = musicaService;
         }
-        public List<Musica> PesquisarMusicaPorTitulo(string termoPesquisa)
+        public List<Musica> PesquisarMusicaPorPropriedade(string termoPesquisa, string propriedade)
         {
-            return _musicaService.PesquisarMusicaPorTitulo(termoPesquisa);
+            return _musicaService.PesquisarMusicaPorPropriedade(termoPesquisa, propriedade);
         }
 
     }

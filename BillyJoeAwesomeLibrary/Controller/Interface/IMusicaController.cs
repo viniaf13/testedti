@@ -5,6 +5,6 @@ namespace BillyJoeAwesomeLibrary.Controller.Interface
 {
     public interface IMusicaController
     {
-        List<Musica> PesquisarMusicaPorTitulo(string termoPesquisa);
+        List<Musica> PesquisarMusicaPorPropriedade(string termoPesquisa, string propriedade);
     }
 }
