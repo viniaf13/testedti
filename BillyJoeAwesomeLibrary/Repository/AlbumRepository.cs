@@ -25,11 +25,14 @@ namespace BillyJoeAwesomeLibrary.Repository
             string path = Directory.GetCurrentDirectory();
             List<Album> baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + Constants.FILE_NAME);
             List<Album> albunsFiltrados = new List<Album>();
-            foreach (Album album in baseDeDados)
+            if (baseDeDados != null)
             {
-                if ((string)Utils.GetPropertyValue(album, propriedadeAlbum) == termoPesquisa)
+                foreach (Album album in baseDeDados)
                 {
-                    albunsFiltrados.Add(album);
+                    if ((string)Utils.GetPropertyValue(album, propriedadeAlbum) == termoPesquisa)
+                    {
+                        albunsFiltrados.Add(album);
+                    }
                 }
             }
             return albunsFiltrados;

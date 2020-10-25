@@ -1,6 +1,7 @@
 ﻿using BillyJoeAwesomeLibrary.Helper;
 using BillyJoeAwesomeLibrary.Models;
 using BillyJoeAwesomeLibrary.Repository.Interface;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,9 +16,12 @@ namespace BillyJoeAwesomeLibrary.Repository
             List<Album> baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + Constants.FILE_NAME);
 
             List<Musica> musicasFiltradas = new List<Musica>();
-            foreach (Album album in baseDeDados)
+            if (baseDeDados != null)
             {
-                musicasFiltradas.AddRange((album.Musicas.Where(musica => (string)Utils.GetPropertyValue(musica, propriedade) == termoPesquisa)));
+                foreach (Album album in baseDeDados)
+                {
+                    musicasFiltradas.AddRange((album.Musicas.Where(musica => (string)Utils.GetPropertyValue(musica, propriedade) == termoPesquisa)));
+                }
             }
             return musicasFiltradas;
         }
@@ -27,11 +31,13 @@ namespace BillyJoeAwesomeLibrary.Repository
             string path = Directory.GetCurrentDirectory();
             List<Album> baseDeDados = Utils.ReadFromJsonFile<List<Album>>(path + Constants.FILE_NAME);
             List<Musica> todasMusicas = new List<Musica>();
-            foreach (Album album in baseDeDados)
+            if (baseDeDados != null)
             {
-                todasMusicas.AddRange(album.Musicas);
+                foreach (Album album in baseDeDados)
+                {
+                    todasMusicas.AddRange(album.Musicas);
+                }
             }
-
             return todasMusicas;
         }
     }
