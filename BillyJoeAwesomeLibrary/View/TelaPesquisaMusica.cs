@@ -2,6 +2,7 @@
 using BillyJoeAwesomeLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BillyJoeAwesomeLibrary.View
@@ -27,13 +28,13 @@ namespace BillyJoeAwesomeLibrary.View
                     case "1":
                         Console.Write("\nDigite o titulo do musica: ");
                         inputUsuario = Console.ReadLine();
-                        PesquisarMusicaPorPropriedade(inputUsuario, "Musica.Titulo");
+                        PesquisarMusicaPorTitulo(inputUsuario);
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "2":
                         Console.Write("\nDigite a banda desejada: ");
                         inputUsuario = Console.ReadLine();
-                        PesquisarMusicaPorPropriedade(inputUsuario, "Banda");
+                       // PesquisarMusicaPorTitulo(inputUsuario, "Banda");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "3":
@@ -48,13 +49,32 @@ namespace BillyJoeAwesomeLibrary.View
             }
         }
 
-        private void PesquisarMusicaPorPropriedade(string inputUsuario, string propriedade)
+        private void PesquisarMusicaPorTitulo(string inputUsuario)
         {
-            List<Album> albuns = _albumController.PesquisarAlbumPorPropriedade(inputUsuario, propriedade);
-            //MostrarMusicasFiltrados(albuns);
+            List<Musica> musicasFiltradas = _musicaController.PesquisarMusicaPorTitulo(inputUsuario);
+            MostrarMusicasFiltradas(musicasFiltradas);
         }
 
-        private string AbrirMenuDeOpcoes()
+        private static void MostrarMusicasFiltradas(List<Musica> musicas)
+        {
+            if (musicas == null || !musicas.Any())
+            {
+                Console.WriteLine("\nNao foram encontrados resultados para sua busca! =( ");
+            }
+            else
+            {
+                Console.WriteLine("\nForam encontrados os seguintes resultados: \n ");
+                foreach (Musica musica in musicas)
+                {
+                    string isFavorita = (musica.Favorita ? "♥" : "");
+                    Console.WriteLine(
+                    $"{musica.Titulo} - {musica.Banda} ({musica.DuracaoEmSeg}s) {isFavorita} ");
+                }
+                Console.WriteLine("");
+            }
+        }
+
+            private string AbrirMenuDeOpcoes()
         {
             Console.WriteLine(
                 "------------------------------------" +

@@ -27,14 +27,14 @@ namespace BillyJoeAwesomeLibrary.View
             string errorMsg = "\nAno invalido.\nDigite um ano de lancamento valido para o album: ";
             novoAlbum.AnoLancamento = Utils.ValidacaoAnoString(anoString, errorMsg);
 
-            novoAlbum.Musicas = AdicionarMusicas();
+            novoAlbum.Musicas = AdicionarMusicas(novoAlbum);
 
             _albumController.CadastrarAlbum(novoAlbum);
 
             Console.WriteLine("\nAlbum cadastrado com sucesso!");
         }
 
-        private List<Musica> AdicionarMusicas()
+        private List<Musica> AdicionarMusicas(Album novoAlbum)
         {
             List<Musica> musicas = new List<Musica>();
 
@@ -56,6 +56,7 @@ namespace BillyJoeAwesomeLibrary.View
                 musicaAtual.DuracaoEmSeg = Utils.ValidacaoInteiroMaiorQueZero(duracaoMusicaString, errorMsg);
 
                 musicaAtual.Favorita = IsMusicaFavorita();
+                musicaAtual.Banda = novoAlbum.Banda;
                 musicas.Add(musicaAtual);
             }
             return musicas;

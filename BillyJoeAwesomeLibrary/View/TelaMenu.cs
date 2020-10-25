@@ -33,7 +33,7 @@ namespace BillyJoeAwesomeLibrary.View
                         break;
                     case "3":
                         TelaPesquisaMusica telaPesquisaMusica = new TelaPesquisaMusica(_albumController, _musicaController);
-                        Console.WriteLine("\nPesquisou Musica");
+                        telaPesquisaMusica.PesquisarMusica();
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "4":

@@ -1,5 +1,7 @@
-﻿using BillyJoeAwesomeLibrary.Repository.Interface;
+﻿using BillyJoeAwesomeLibrary.Models;
+using BillyJoeAwesomeLibrary.Repository.Interface;
 using BillyJoeAwesomeLibrary.Service.Interface;
+using System.Collections.Generic;
 
 namespace BillyJoeAwesomeLibrary.Service
 {
@@ -10,5 +12,11 @@ namespace BillyJoeAwesomeLibrary.Service
         {
             _musicaRepository = musicaRepository;
         }
+
+        public List<Musica> PesquisarMusicaPorTitulo(string termoPesquisa)
+        {
+            return _musicaRepository.PesquisarMusicaPorTitulo(termoPesquisa);
+        }
+
     }
 }
