@@ -6,6 +6,6 @@ namespace BillyJoeAwesomeLibrary.Service.Interface
     public interface IAlbumService
     {
         void CadastrarAlbum(Album album);
-        List<Album> PesquisarAlbumPorTitulo(string termoPesquisa);
+        List<Album> PesquisarAlbumPorPropriedade(string termoPesquisa, string propriedadeAlbum);
     }
 }

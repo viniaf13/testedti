@@ -51,6 +51,7 @@ namespace BillyJoeAwesomeLibrary.View
         private string AbrirMenuDeOpcoes()
         {
             Console.WriteLine(
+                "------------------------------------" +
                 "\nMENU DE OPERACOES\n" +
                 "1 - Cadastrar Album\n" +
                 "2 - Pesquisar Album\n" +

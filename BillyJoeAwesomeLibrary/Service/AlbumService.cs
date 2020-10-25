@@ -17,10 +17,9 @@ namespace BillyJoeAwesomeLibrary.Service
             _albumRepository.CadastrarAlbum(album);
         }
 
-        public List<Album> PesquisarAlbumPorTitulo(string termoPesquisa)
+        public List<Album> PesquisarAlbumPorPropriedade(string termoPesquisa, string propriedadeAlbum)
         {
-            List<Album> albuns = new List<Album>();
-            albuns = _albumRepository.PesquisarAlbumPorTitulo(termoPesquisa);
+            List<Album> albuns = _albumRepository.PesquisarAlbumPorPropriedade(termoPesquisa, propriedadeAlbum);
             return albuns;
         }
     }

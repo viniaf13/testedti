@@ -31,9 +31,7 @@ namespace BillyJoeAwesomeLibrary.View
 
             _albumController.CadastrarAlbum(novoAlbum);
 
-            //mensagem sucesso
             Console.WriteLine("\nAlbum cadastrado com sucesso!");
-            //retornar ao menu
         }
 
         private List<Musica> AdicionarMusicas()
@@ -43,7 +41,7 @@ namespace BillyJoeAwesomeLibrary.View
             Console.Write("\nAdicione musicas ao album. Quantas musicas o album possui? ");
             string numMusicaString = Console.ReadLine();
             string errorMsg = "\nNumero invalido.\nDigite um numero valido para o numero de musicas: ";
-            int musicCount = Utils.ValidacaoInteiroMaiorQueZero(numMusicaString, errorMsg);
+            int musicCount = Int32.Parse(Utils.ValidacaoInteiroMaiorQueZero(numMusicaString, errorMsg));
 
             for (int i = 0; i < musicCount; i++)
             {
@@ -68,16 +66,6 @@ namespace BillyJoeAwesomeLibrary.View
             Console.Write("\nDigite '1' se a musica eh favorita: ");
             return (Console.ReadLine() == "1") ? true : false;
         }
-
-        private bool ConfirmarCadastroAlbum(Album novoAlbum)
-        {
-            Console.WriteLine("\nTitulo: " + novoAlbum.Titulo);
-            Console.WriteLine("\nBanda: " + novoAlbum.Banda);
-            Console.WriteLine("\nAno de Lancamento: " + novoAlbum.AnoLancamento);
-
-            return true;
-        }
-
 
     }
 }

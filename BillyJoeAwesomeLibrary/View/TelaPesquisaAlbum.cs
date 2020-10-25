@@ -23,15 +23,21 @@ namespace BillyJoeAwesomeLibrary.View
                 switch (inputUsuario)
                 {
                     case "1":
-                        PesquisarAlbumPorTitulo();
+                        Console.Write("\nDigite o titulo do album: ");
+                        inputUsuario = Console.ReadLine();
+                        PesquisarAlbumPorPropriedade(inputUsuario, "Titulo");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "2":
-                        Console.WriteLine("\nPesquisou Musica2");
+                        Console.Write("\nDigite o ano de lancamento do album: ");
+                        inputUsuario = Console.ReadLine();
+                        PesquisarAlbumPorPropriedade(inputUsuario, "AnoLancamento");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "3":
-                        Console.WriteLine("\nPesquisou Musica3");
+                        Console.Write("\nDigite o nome da banda do album: ");
+                        inputUsuario = Console.ReadLine();
+                        PesquisarAlbumPorPropriedade(inputUsuario, "Banda");
                         inputUsuario = AbrirMenuDeOpcoes();
                         break;
                     case "4":
@@ -45,11 +51,14 @@ namespace BillyJoeAwesomeLibrary.View
                 }
             }
         }
-        private void PesquisarAlbumPorTitulo()
+        private void PesquisarAlbumPorPropriedade(string inputUsuario, string propriedade)
         {
-            Console.Write("\nDigite o titulo do album: ");
-            string inputUsuario = Console.ReadLine();
-            List<Album> albuns = _albumController.PesquisarAlbumPorTitulo(inputUsuario);
+            List<Album> albuns = _albumController.PesquisarAlbumPorPropriedade(inputUsuario, propriedade);
+            MostrarAlbunsFiltrados(albuns);
+        }
+
+        private static void MostrarAlbunsFiltrados(List<Album> albuns)
+        {
             if (albuns == null || !albuns.Any())
             {
                 Console.WriteLine("\nNao foram encontrados resultados para sua busca! =( ");
@@ -71,13 +80,16 @@ namespace BillyJoeAwesomeLibrary.View
                         Console.WriteLine(
                         $"   {musicCount} - {musica.Titulo} ({musica.DuracaoEmSeg}s) {isFavorita} ");
                         musicCount++;
-                    }    
+                    }
+                    Console.WriteLine("");
                 }
             }
-        } 
+        }
+
         private string AbrirMenuDeOpcoes()
         {
             Console.WriteLine(
+                "------------------------------------" +
                 "\nSelecione o filtro da pesquisa:\n" +
                 "1 - Pesquisar por titulo\n" +
                 "2 - Pesquisar por ano de lancamento\n" +

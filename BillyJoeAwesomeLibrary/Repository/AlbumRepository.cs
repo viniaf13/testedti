@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 
 namespace BillyJoeAwesomeLibrary.Repository
 {
@@ -21,19 +22,24 @@ namespace BillyJoeAwesomeLibrary.Repository
             WriteToJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt", baseDeDados);
         }
 
-        public List<Album> PesquisarAlbumPorTitulo(string termoPesquisa)
+        public List<Album> PesquisarAlbumPorPropriedade(string termoPesquisa, string propriedadeAlbum)
         {
             string path = Directory.GetCurrentDirectory();
             List<Album> baseDeDados = ReadFromJsonFile<List<Album>>(path + "\\BibliotecaDoBillie.txt");
             List<Album> albunsFiltrados = new List<Album>();
             foreach (Album album in baseDeDados)
             {
-                if (album.Titulo == termoPesquisa)
+                if ((string)GetPropertyValue(album, propriedadeAlbum) == termoPesquisa)
                 {
                     albunsFiltrados.Add(album);
                 }
             }
             return albunsFiltrados;
+        }
+
+        public object GetPropertyValue(object obj, string propertyName)
+        {
+            return obj.GetType().GetProperty(propertyName).GetValue(obj, null);
         }
 
         private static void WriteToJsonFile<T>(string filePath, T objectToWrite, bool append = false) where T : new()

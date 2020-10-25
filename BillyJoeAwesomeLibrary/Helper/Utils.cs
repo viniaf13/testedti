@@ -4,7 +4,7 @@ namespace BillyJoeAwesomeLibrary.Helper
 {
     static class Utils
     {
-        public static int ValidacaoAnoString(string anoString, string errorMsg)
+        public static string ValidacaoAnoString(string anoString, string errorMsg)
         {
             bool isAnoValido = (Utils.IsStringInteiroMaiorQueZero(anoString) && (anoString.Length == 4));
             while (!isAnoValido)
@@ -13,10 +13,10 @@ namespace BillyJoeAwesomeLibrary.Helper
                 anoString = Console.ReadLine();
                 isAnoValido = (Utils.IsStringInteiroMaiorQueZero(anoString) && (anoString.Length == 4));
             }
-            return Int32.Parse(anoString);
+            return anoString;
         }
 
-        public static int ValidacaoInteiroMaiorQueZero(string numeroString, string errorMsg)
+        public static string ValidacaoInteiroMaiorQueZero(string numeroString, string errorMsg)
         {
             bool isNumeroValido = (Utils.IsStringInteiroMaiorQueZero(numeroString));
             while (!isNumeroValido)
@@ -25,7 +25,7 @@ namespace BillyJoeAwesomeLibrary.Helper
                 numeroString = Console.ReadLine();
                 isNumeroValido = (Utils.IsStringInteiroMaiorQueZero(numeroString));
             }
-            return Int32.Parse(numeroString);
+            return numeroString;
         }
 
         private static bool IsStringInteiroMaiorQueZero(string stringTeste)

@@ -6,7 +6,7 @@ namespace BillyJoeAwesomeLibrary.Models
     {
         public string Titulo { get; set; }
         public string Banda { get; set; }
-        public int AnoLancamento { get; set; }
+        public string AnoLancamento { get; set; }
         public List<Musica> Musicas { get; set; }
     }
 }
