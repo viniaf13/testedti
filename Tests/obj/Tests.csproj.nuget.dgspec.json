@@ -120,17 +120,9 @@
               "target": "Package",
               "version": "[4.14.7, )"
             },
-            "coverlet.collector": {
+            "OpenCover": {
               "target": "Package",
-              "version": "[1.2.0, )"
-            },
-            "xunit": {
-              "target": "Package",
-              "version": "[2.4.0, )"
-            },
-            "xunit.runner.visualstudio": {
-              "target": "Package",
-              "version": "[2.4.0, )"
+              "version": "[4.7.922, )"
             }
           },
           "imports": [
